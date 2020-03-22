@@ -420,8 +420,7 @@ function aiosc_get_from_email() {
     if ( substr( $sitename, 0, 4 ) == 'www.' ) {
         $sitename = substr( $sitename, 4 );
     }
-    $admin_email = get_option('admin_email');
-    return apply_filters('aiosc_from_email_address',$admin_email);
+    return apply_filters('aiosc_from_email_address','wordpress@'.$sitename);
 }
 /**
  * Check if string is valid e-mail address
