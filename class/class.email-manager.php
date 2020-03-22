@@ -21,8 +21,7 @@ class aiosc_EmailManager {
             if(!aiosc_is_email($to[$i])) unset($to[$i]);
         }
         if(empty($to)) return false;
-        $from = 'soporte@miembropress.com';
-        //$from = aiosc_get_from_email();
+        $from = aiosc_get_from_email();
         if(empty($reply_to) || ($reply_to != $from && !aiosc_is_email($reply_to))) {
             $reply_to = $from;
         }

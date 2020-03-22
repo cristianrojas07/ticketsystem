@@ -17,7 +17,9 @@ global $aiosc_settings, $aiosc_capabilities;
         </td>
     </tr>
      */ ?>
+     
     <tr>
+    
         <th><label for="enable_staff_ribbon"><?php _e('Habilitar Cinta de Personal','aiosc')?></label>
             <a href="#" class="aiosc-info-tooltip dashicons dashicons-lightbulb"></a>
             <small><?php _e('¿Te gustaría tener una cinta sobre tu avatar?','aiosc')?> </small>

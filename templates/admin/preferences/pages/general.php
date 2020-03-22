@@ -36,7 +36,7 @@ $pages = get_pages();
         </td>
     </tr>
     <tr>
-        <th><label for="page_ticket_preview"><?php _e('Vista Previa de el Ticket (individual)','aiosc')?></label>
+        <th><label for="page_ticket_preview"><?php _e('Vista Previa del Ticket (individual)','aiosc')?></label>
             <a href="#" class="aiosc-info-tooltip dashicons dashicons-lightbulb"></a>
             <small><?php _e('¿Qué página mostrará la vista previa de un solo ticket?','aiosc')?> </small></th>
         <td>

@@ -416,11 +416,14 @@ function aiosc_get_pagination($total_count, $items_per_page, $current_page) {
  * custom FROM e-mail address
  */
 function aiosc_get_from_email() {
-    $sitename = strtolower( @$_SERVER['SERVER_NAME'] );
-    if ( substr( $sitename, 0, 4 ) == 'www.' ) {
-        $sitename = substr( $sitename, 4 );
+    $from_email = aiosc_get_settings('email_from_admin');
+    if(empty($from_email)){
+        if (substr($sitename, 0, 4) == 'www.') {
+            $sitename = substr($sitename, 4);
+        }
+        $from_email = 'wordpress@'.$sitename;
     }
-    return apply_filters('aiosc_from_email_address','wordpress@'.$sitename);
+    return apply_filters('aiosc_from_email_address','asd@asd.com');
 }
 /**
  * Check if string is valid e-mail address

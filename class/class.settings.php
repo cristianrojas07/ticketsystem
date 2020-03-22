@@ -56,6 +56,7 @@ class aiosc_Settings {
             'allow_download'=>true, //allow users to download files from tickets & replies
             'upload_mimes'=>'txt,doc,docx,rtf,pdf,jpg,png,bmp,gif,rtf,zip,rar,gz,7z,mp3,sql', //* == all are allowed, but PHP, BAT and EXE will always be disallowed for security reasons.
             'upload_mimes_forbid'=>false, //if true, upload_mimes will be FORBIDDEN, instead of ONLY ALLOWED
+            'email_from_admin'=>get_option('admin_email'),
             'max_upload_size_per_file'=>4 * 1024, /** in kilobytes (but @max_upload_size must be set in php.ini as well) */
             'max_files_per_ticket'=>4, //minimum: 1 - how many files can user attach on a single ticket?
             'max_files_per_reply'=>4, //minimum: 1 - how many files can user attach on a single reply?

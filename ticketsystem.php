@@ -3,7 +3,7 @@
  * Plugin Name: Ticket System
  * Description: Solución todo en uno para proporcionar un soporte de calidad a sus clientes.
  * Author: Ticket System
- * Version: 999.0.0
+ * Version: 2.0.0
  * Plugin URI: https://ticketsystem.pro
  * Author URI: https://ticketsystem.pro
 */

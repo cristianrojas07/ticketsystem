@@ -22,6 +22,15 @@ global $aiosc_settings, $aiosc_capabilities;
         </td>
     </tr>
     <tr>
+        <th><label for="email_from_admin"><?php _e('Correo Electrónico de Ticket Creado','aiosc')?></label>
+            <a href="#" class="aiosc-info-tooltip dashicons dashicons-lightbulb"></a>
+            <small><?php _e('La confirmación al usuario cuando su ticket se haya creado correctamente se enviará desde este correo electrónico.','aiosc')?> </small>
+        </th>
+        <td>
+            <input type="text" style="width: 40%" id="email_from_admin" name="email_from_admin" value="<?php echo aiosc_get_settings('email_from_admin')?>" />
+        </td>
+    </tr>
+    <tr>
         <th><label for="email_ar_customer_ticket_reply"><?php _e('En Nueva Respuesta','aiosc')?></label>
             <a href="#" class="aiosc-info-tooltip dashicons dashicons-lightbulb"></a>
             <small><?php _e('Enviar un correo electrónico de notificación al usuario cuando el Operador publique una nueva respuesta en su ticket.','aiosc')?> </small>

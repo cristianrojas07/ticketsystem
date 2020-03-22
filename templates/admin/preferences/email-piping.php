@@ -42,7 +42,7 @@ $domain = aiosc_get_domain();
             <small><?php _e('Los usuarios enviarán sus tickets a esta dirección de correo electrónico.','aiosc')?> </small>
         </th>
         <td>
-            <input type="text" id="email_piping_support_addr" name="email_piping_support_addr" placeholder="ex. support@<?php echo $domain?>" size="40" value="<?php echo $aiosc_settings->get('email_piping_support_addr')?>" />
+            <input type="text" id="email_piping_support_addr" name="email_piping_support_addr" placeholder="ex.support@<?php echo $domain?>" size="40" value="<?php echo $aiosc_settings->get('email_piping_support_addr')?>" />
         </td>
     </tr>
     <tr>
