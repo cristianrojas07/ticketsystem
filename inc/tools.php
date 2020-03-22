@@ -423,7 +423,7 @@ function aiosc_get_from_email() {
         }
         $from_email = 'wordpress@'.$sitename;
     }
-    return apply_filters('aiosc_from_email_address','asd@asd.com');
+    return apply_filters('aiosc_from_email_address',$from_email);
 }
 /**
  * Check if string is valid e-mail address
