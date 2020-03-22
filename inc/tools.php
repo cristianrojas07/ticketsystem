@@ -418,6 +418,7 @@ function aiosc_get_pagination($total_count, $items_per_page, $current_page) {
 function aiosc_get_from_email() {
     $from_email = aiosc_get_settings('email_from_admin');
     if(empty($from_email)){
+        $sitename = strtolower( @$_SERVER['SERVER_NAME'] );
         if (substr($sitename, 0, 4) == 'www.') {
             $sitename = substr($sitename, 4);
         }
