@@ -29,7 +29,7 @@ class aiosc_Hooks {
         add_filter('editable_roles',array($this,'editable_roles'));
 
         //add default AIOSC role to newly registered user
-        add_action('user_register',array($this,"hook_save_user_role_register"));
+        add_action('user_register', array($this, 'hook_save_user_role_register'), 1, 1);
         //add default AIOSC role to newly registered user via BuddyPress plugin
         add_action('bp_core_signup_user', array($this, 'hook_save_user_role_register'));
         //update plugin roles whenever WP calls set_role
@@ -320,9 +320,22 @@ class aiosc_Hooks {
      */
     function hook_save_user_role_register($user_id) {
         global $aiosc_user, $aiosc_settings, $aiosc_capabilities;
-
+		
 		if(is_wp_error($user_id)) return;
-
+		
+        $user = new aiosC_User($user_id);
+        $role = $aiosc_settings->get("default_role");
+        if(!$role) return;
+        if($aiosc_capabilities->role_exists($role)) {
+            if($aiosc_capabilities->role_has_cap('staff', $role)) return;
+            $user->wpUser->add_role($role);
+        }
+    }
+	static function hook_save_user_miembropress($user_id) {
+        global $aiosc_user, $aiosc_settings, $aiosc_capabilities;
+		
+		if(is_wp_error($user_id)) return;
+		
         $user = new aiosC_User($user_id);
         $role = $aiosc_settings->get("default_role");
         if(!$role) return;
@@ -861,7 +874,6 @@ class aiosc_Hooks {
             /** @EMAIL-SETTINGS - Auto Responders */
             elseif($s == 'email') {
 
-                $aiosc_settings->set('email_from_admin',trim($p['email_from_admin']) != ''?$p['email_from_admin']:'');
                 $aiosc_settings->set('email_ar_customer_ticket_creation',isset($p['email_ar_customer_ticket_creation']));
                 $aiosc_settings->set('email_ar_customer_ticket_reply',isset($p['email_ar_customer_ticket_reply']));
                 $aiosc_settings->set('email_ar_customer_ticket_close',isset($p['email_ar_customer_ticket_close']));
