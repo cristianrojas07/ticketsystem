@@ -29,7 +29,7 @@ class aiosc_Hooks {
         add_filter('editable_roles',array($this,'editable_roles'));
 
         //add default AIOSC role to newly registered user
-        add_action('user_register', array($this, 'hook_save_user_role_register'), 1, 1);
+        add_action('user_register', array($this, 'hook_save_user_role_register'));
         //add default AIOSC role to newly registered user via BuddyPress plugin
         add_action('bp_core_signup_user', array($this, 'hook_save_user_role_register'));
         //update plugin roles whenever WP calls set_role
