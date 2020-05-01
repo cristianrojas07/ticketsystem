@@ -873,7 +873,7 @@ class aiosc_Hooks {
 
             /** @EMAIL-SETTINGS - Auto Responders */
             elseif($s == 'email') {
-
+                $aiosc_settings->set('email_from_admin',trim($p['email_from_admin']) != ''?$p['email_from_admin']:'');
                 $aiosc_settings->set('email_ar_customer_ticket_creation',isset($p['email_ar_customer_ticket_creation']));
                 $aiosc_settings->set('email_ar_customer_ticket_reply',isset($p['email_ar_customer_ticket_reply']));
                 $aiosc_settings->set('email_ar_customer_ticket_close',isset($p['email_ar_customer_ticket_close']));
